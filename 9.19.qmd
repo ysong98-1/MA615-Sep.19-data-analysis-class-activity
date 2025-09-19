@@ -1,0 +1,24 @@
+---
+title: "9.19"
+format: pdf
+editor: visual
+---
+
+```{r}
+data("crimtab")
+df <- data.frame(
+  Height = as.numeric(colnames(crimtab)),
+  Count = colSums(crimtab)
+)
+library(ggplot2)
+ggplot(df, aes(x = Height, y = Count)) +
+  geom_col(fill = "yellow") +
+  labs(
+    title = "Criminals by Height",
+    x = "Height",
+    y = "Number of Individuals"
+  )
+
+```
+
+This graph shows the heights of different criminals, and the shape of this graph is bell-shaped, indicating that it follows a normal distribution. which means that most individuals have heights near the average, while very short or very tall heights are less common.
